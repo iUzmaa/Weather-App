@@ -13,6 +13,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
                 <p>Weather: ${data.weather[0].description}</p>
             `;
             document.body.style.backgroundImage = getBackgroundImage(data.weather[0].main);
+            
         })
         .catch(error => {
             console.error('Error fetching data:', error); 
@@ -28,7 +29,6 @@ function getBackgroundImage(weatherCondition) {
         case 'Clouds':
             return "url('cloudy.avif')";
         case 'Rain':
-        case 'Drizzle':
             return "url('rainy.webp')";
         default:
             return "none";
